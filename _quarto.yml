@@ -14,6 +14,8 @@ website:
         text: Projects  
       - href: tools.qmd
         text: Tools       
+      - href: blog.qmd      
+        text: Blog
 
 format:
   html:
