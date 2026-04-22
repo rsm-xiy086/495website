@@ -166,11 +166,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#main-analysis" id="toc-main-analysis" class="nav-link" data-scroll-target="#main-analysis">Main Analysis</a>
+  <ul class="collapse">
   <li><a href="#replication-1-table-1-balance-check" id="toc-replication-1-table-1-balance-check" class="nav-link" data-scroll-target="#replication-1-table-1-balance-check">Replication 1: Table 1 — Balance Check</a></li>
   <li><a href="#replication-2-table-2a-panel-a-main-treatment-effects" id="toc-replication-2-table-2a-panel-a-main-treatment-effects" class="nav-link" data-scroll-target="#replication-2-table-2a-panel-a-main-treatment-effects">Replication 2: Table 2A (Panel A) — Main Treatment Effects</a></li>
   <li><a href="#replication-3-table-3-columns-12-regression-estimates" id="toc-replication-3-table-3-columns-12-regression-estimates" class="nav-link" data-scroll-target="#replication-3-table-3-columns-12-regression-estimates">Replication 3: Table 3 (Columns 1–2) — Regression Estimates</a></li>
-  <li><a href="#additional-analysis-visualizing-the-redblue-state-heterogeneity" id="toc-additional-analysis-visualizing-the-redblue-state-heterogeneity" class="nav-link" data-scroll-target="#additional-analysis-visualizing-the-redblue-state-heterogeneity">Additional Analysis: Visualizing the Red/Blue State Heterogeneity</a></li>
+  </ul></li>
+  <li><a href="#something-additional-visualizing-the-redblue-state-heterogeneity" id="toc-something-additional-visualizing-the-redblue-state-heterogeneity" class="nav-link" data-scroll-target="#something-additional-visualizing-the-redblue-state-heterogeneity">Something Additional: Visualizing the Red/Blue State Heterogeneity</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -235,12 +237,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In the sections below, we replicate the paper’s key findings using the publicly available dataset. We reproduce Table 1 (balance checks confirming successful randomization), Table 2A Panel A (the main treatment effects on response rate and donation amount), and Table 3 Column 1 (the regression estimates of the match effect on the probability of giving). We also extend the paper’s results by visualizing the red/blue state heterogeneity, which the authors present only in tabular form.</p>
 <hr>
 </section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<section id="main-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="main-analysis">Main Analysis</h2>
 <hr>
-</section>
-<section id="replication-1-table-1-balance-check" class="level2">
-<h2 class="anchored" data-anchor-id="replication-1-table-1-balance-check">Replication 1: Table 1 — Balance Check</h2>
+<section id="replication-1-table-1-balance-check" class="level3">
+<h3 class="anchored" data-anchor-id="replication-1-table-1-balance-check">Replication 1: Table 1 — Balance Check</h3>
 <p>A successful randomization means that the treatment and control groups should look statistically identical on all pre-treatment observable characteristics. Table 1 in the paper reports means for both groups across a set of baseline variables. If randomization worked, none of the differences should be statistically significant.</p>
 <div id="table1" class="cell" data-execution_count="2">
 <details class="code-fold">
@@ -300,8 +301,8 @@ N: All = 50,083  |  Treatment = 33,396  |  Control = 16,687</code></pre>
 <p><strong>Interpretation:</strong> The p-values across all variables are well above conventional significance thresholds, and the treatment and control means are nearly identical in every row. These results closely match Table 1 of the paper, confirming that the randomization was successful. Any subsequent differences in giving behavior can therefore be plausibly attributed to the match treatment rather than pre-existing differences between groups.</p>
 <hr>
 </section>
-<section id="replication-2-table-2a-panel-a-main-treatment-effects" class="level2">
-<h2 class="anchored" data-anchor-id="replication-2-table-2a-panel-a-main-treatment-effects">Replication 2: Table 2A (Panel A) — Main Treatment Effects</h2>
+<section id="replication-2-table-2a-panel-a-main-treatment-effects" class="level3">
+<h3 class="anchored" data-anchor-id="replication-2-table-2a-panel-a-main-treatment-effects">Replication 2: Table 2A (Panel A) — Main Treatment Effects</h3>
 <p>Table 2A reports three outcome measures across treatment conditions: the response rate (fraction of recipients who donated), the unconditional average donation (including zeros), and the conditional average donation (among givers only). Panel A covers the full sample.</p>
 <div id="table2a" class="cell" data-execution_count="3">
 <details class="code-fold">
@@ -351,8 +352,8 @@ Note: standard errors in parentheses.</code></pre>
 <p><strong>Interpretation:</strong> These estimates closely match the published values in Table 2A of the paper: the control response rate is 1.8%, the treatment response rate is 2.2%, and the unconditional donation amount rises from $0.813 to $0.967 per letter. The three ratio sub-groups (1:1, 2:1, 3:1) show response rates of 2.1%, 2.3%, and 2.3% respectively — nearly identical to one another, consistent with the paper’s finding that larger match ratios provide no additional lift beyond the 1:1 baseline.</p>
 <hr>
 </section>
-<section id="replication-3-table-3-columns-12-regression-estimates" class="level2">
-<h2 class="anchored" data-anchor-id="replication-3-table-3-columns-12-regression-estimates">Replication 3: Table 3 (Columns 1–2) — Regression Estimates</h2>
+<section id="replication-3-table-3-columns-12-regression-estimates" class="level3">
+<h3 class="anchored" data-anchor-id="replication-3-table-3-columns-12-regression-estimates">Replication 3: Table 3 (Columns 1–2) — Regression Estimates</h3>
 <p>The paper labels Table 3 as a probit regression, but as noted in the assignment, the reported coefficients closely resemble OLS linear probability model estimates. We use OLS here, which faithfully reproduces the published numbers.</p>
 <p>We estimate two specifications:</p>
 <ul>
@@ -425,8 +426,9 @@ N = 50,083
 <p><strong>Interpretation:</strong> The <code>treatment</code> coefficient in Column 1 is 0.004 and highly significant, matching the value reported in Table 3 Column 1 of the paper. This implies that receiving a match offer raises the probability of donating by approximately 0.4 percentage points off a baseline rate of 1.8% — a relative increase of around 22%. In Column 2, the interaction terms for the 2:1 and 3:1 ratios are small and statistically insignificant, consistent with the paper’s finding that larger ratios add nothing beyond the 1:1 baseline. The sub-treatment interactions for threshold size and ask amount are similarly close to zero.</p>
 <hr>
 </section>
-<section id="additional-analysis-visualizing-the-redblue-state-heterogeneity" class="level2">
-<h2 class="anchored" data-anchor-id="additional-analysis-visualizing-the-redblue-state-heterogeneity">Additional Analysis: Visualizing the Red/Blue State Heterogeneity</h2>
+</section>
+<section id="something-additional-visualizing-the-redblue-state-heterogeneity" class="level2">
+<h2 class="anchored" data-anchor-id="something-additional-visualizing-the-redblue-state-heterogeneity">Something Additional: Visualizing the Red/Blue State Heterogeneity</h2>
 <p>The paper’s most striking result — that the match effect appears to be driven mainly by red-state donors — is reported in Table 5 as regression coefficients across Bush vote-share bins. Here we visualize it directly, making the geographic heterogeneity immediately apparent.</p>
 <div id="cell-fig-red-blue" class="cell" data-execution_count="5">
 <details class="code-fold">
