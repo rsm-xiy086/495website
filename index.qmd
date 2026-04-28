@@ -10,9 +10,10 @@ about:
       href: https://www.linkedin.com/in/yihui-tang-5036843ab/
 ---
 
-Welcome to my website!
----
+## Welcome to my website!
 
-This is a Quarto website.
+I am a graduate student in the Master of Science in Business Analytics program at UC San Diego.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+I am interested in data analysis, visualization, and using data-driven methods to solve real-world business problems. 
+
+Thank you for visiting, and I hope you enjoy exploring my site!
