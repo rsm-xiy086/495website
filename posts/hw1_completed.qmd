@@ -352,5 +352,7 @@ empirical_fpr = false_positives / n_experiments
 print(f"Nominal false positive rate (single test) : 5.0%")
 print(f"Empirical false positive rate (peeking)   : {empirical_fpr*100:.1f}%")
 ```
+
 The empirical false positive rate balloons to around **`{python} f"{empirical_fpr*100:.1f}"`%** — far above the nominal 5%. In other words, even when there is truly no difference between the CTAs, we'd incorrectly declare a winner in roughly one out of every four or five experiments.
+
 This is why **pre-registration matters** in A/B testing: decide your sample size *before* collecting data, run the test *once* at the end, and commit to that result. If you want the flexibility to stop early, you need more sophisticated methods — such as sequential testing or Bayesian approaches — that properly account for the multiple looks. Classical frequentist tests applied naively with repeated peeking will mislead you far more often than you think.
